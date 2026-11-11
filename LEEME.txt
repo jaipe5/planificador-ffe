@@ -1,0 +1,58 @@
+PLANIFICADOR DE PRÁCTICAS FFE
+Código fuente de la versión publicada el 28 de octubre de 2026
+
+CÓMO ABRIR LA APLICACIÓN
+1. Extrae todos los archivos del ZIP en una carpeta.
+2. Abre index.html con un navegador moderno.
+3. Conserva index.html, style.css, engine.js y app.js juntos.
+No necesitas instalar Node.js ni contratar una API para usar la calculadora.
+
+Para editar: abre los archivos con Visual Studio Code u otro editor de texto,
+guarda los cambios y vuelve a cargar index.html.
+La copia local es independiente: editarla no cambia el sitio publicado.
+
+ARCHIVOS
+index.html: estructura, formularios y tablas.
+style.css: diseño visual y adaptación a móviles.
+engine.js: motor de cálculo de jornadas y fechas.
+app.js: interacción, resultados, calendario y exportación.
+check.cjs: comprobaciones automáticas del motor; requieren Node.js.
+
+PRUEBAS
+Con Node.js instalado, abre una terminal en esta carpeta y ejecuta:
+node check.cjs
+
+CÓMO FUNCIONA
+1. Convierte las horas a minutos enteros para evitar errores al sumar decimales.
+2. Resta las horas ya realizadas del objetivo total.
+3. Recorre las fechas desde el inicio, incluyéndolo.
+4. Consulta los días semanales habilitados y sus horas.
+5. Aplica las exclusiones y jornadas especiales.
+6. Añade como máximo las horas pendientes en cada jornada.
+7. Termina cuando se completa el objetivo y devuelve el desglose.
+
+DATOS Y PERMISOS
+No incluye claves de API ni credenciales.
+Los cálculos se ejecutan en el navegador.
+Los ajustes se guardan en localStorage del navegador y origen utilizados.
+Al abrir archivos locales, la persistencia puede variar según el navegador.
+Copiar la tabla requiere permiso del navegador y puede necesitar HTTPS;
+si no está disponible, puede utilizarse la descarga CSV.
+La hoja de estilo solicita tipografías de Google Fonts; si no hay conexión,
+utiliza las fuentes de sustitución. El cálculo no depende de ese servicio.
+
+ALCANCE DEL CALENDARIO
+El calendario precargado reproduce el criterio de usar días en blanco del
+calendario adjunto entre el 1 de febrero y el 31 de julio de 2027.
+No es un servicio de consulta de festivos ni una validación normativa.
+Los días coloreados de junio no son todos festivos.
+Los días en blanco posteriores al final lectivo requieren comprobar que
+estén incluidos en el periodo autorizado de prácticas.
+En modo personalizado se deben introducir los festivos y exclusiones aplicables.
+
+RESULTADOS DE REFERENCIA
+Inicio: 16/02/2027. Objetivo: 500 horas. Horas previas: 0.
+Calendario adjunto. Lunes a viernes. Sin otras exclusiones.
+8 horas/día: 24/05/2027, 63 días, última jornada de 4 horas.
+7 horas/día: 04/06/2027, 72 días, última jornada de 3 horas.
+6 horas/día: 01/07/2027, 84 días, última jornada de 2 horas.
